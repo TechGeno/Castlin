@@ -1,0 +1,36 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Castlin</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="icon" href="{% static 'j.png' %}" type="image/png">
+
+</head>
+<body>
+    <center>
+        <br>
+        <br>
+    <h1 style="color: rgb(48, 20, 210); margin: top 200px;">Login</h1></center>
+    <div class="register">
+
+        <form action="login" method="POST">
+            {%csrf_token%}
+            <p>Username</p>
+            <input type="text" name="username" placeholder="Enter your Username" autocomplete="OFF">
+            <p>Password</p>
+            <input type="password" name="password" placeholder="Enter your password">
+            <input type="submit" name="submit">
+        </form>
+        <br>
+        <p><span>Need an account? </span><a href="/accounts/register" class="anchor"> Register Here</a> </p>
+        {% for message in messages %}
+        {{message}}
+        {% endfor %}
+    </div>
+</body>
+
+</html>

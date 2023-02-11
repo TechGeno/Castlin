@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/" style="font-family: cursive;" >  Castlin </a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <div class="flex">
+      <ul class="navbar-nav">
+
+        {% if user.is_authenticated %}
+        <li class="nav-item"> 
+          <a class="nav-link disabled" href="#">Welcome, {{user.username}}</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="/questions/my-questions">My Questions</a>
+        <li class="nav-item">
+          <a class="nav-link" href="/questions/analytics">Analysis</a>
+        <li class="nav-item">
+          <a class="nav-link" href="/accounts/logout">Logout</a>
+          {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="/accounts/register">Register</a>
+        <li class="nav-item">
+          <a class="nav-link" href="/accounts/login">Login</a>
+
+          {% endif %}
+      </ul>
+    </div>
+  </div>
+</nav>
