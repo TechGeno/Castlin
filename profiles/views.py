@@ -4,3 +4,4 @@ from django.contrib import messages
 # Create your views here.
 
 def profile(request):
+    #add the logic here for posting the information of the user
