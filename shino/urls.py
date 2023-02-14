@@ -23,6 +23,7 @@ urlpatterns = [
     path('', include('home.urls')),                                #to home page
     path('accounts/', include('accounts.urls')),                   #to accounts page
     path('questions/',include('questions.urls')),                  #to questions page
+    path('profile/',include('profile.urls')),
 ]
 
 urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root= settings.MEDIA_ROOT)
