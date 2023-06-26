@@ -22,7 +22,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),                               #for the admin page
     path('', include('home.urls')),                                #to home page
     path('accounts/', include('accounts.urls')),                   #to accounts page
-    path('accounts/', include('allauth.urls')), # new
+    path('accounts/', include('allauth.urls')),                             # new
     path('questions/',include('questions.urls')),                  #to questions page
 ]
 
