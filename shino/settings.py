@@ -38,6 +38,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites', # new
+
+    'allauth', # new
+    'allauth.account', # new
+    'allauth.socialaccount', # new
+    # 'allauth.socialaccount.providers.github', # new
+    'allauth.socialaccount.providers.google', # new
+
 ]
 
 MIDDLEWARE = [
@@ -84,6 +92,18 @@ DATABASES = {
         'PASSWORD': 'baLaji$123',
     }
 }
+
+# config/settings.py
+AUTHENTICATION_BACKENDS = (
+    "django.contrib.auth.backends.ModelBackend",
+    "allauth.account.auth_backends.AuthenticationBackend",
+)
+
+SITE_ID = 1
+
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+LOGIN_REDIRECT_URL = 'home'
 
 
 # Password validation
