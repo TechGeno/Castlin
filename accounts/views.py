@@ -60,3 +60,8 @@ def register(request):
             return redirect('register')
     else:
         return render(request, 'register.html' )
+
+
+def signup_redirect(request):
+    messages.error(request,"Something went wrong here, It maybe that you already have account!")
+    return redirect('login')

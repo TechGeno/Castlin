@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites', # new
-    'fontawesome_5', #new
+    
 
     'allauth', # new
     'allauth.account', # new
@@ -57,7 +57,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'fontawesome_5.middleware.FontAwesomeMiddleware',       #new
+    
 ]
 
 ROOT_URLCONF = 'shino.urls'
