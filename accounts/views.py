@@ -34,7 +34,7 @@ def register(request):
         password1 = request.POST['password1']
         password2 = request.POST['password2']
 
-        if (password1==password2 and len(password1)>3):
+        if (password1==password2 and len(password1)>=8):
             if User.objects.filter(username=username).exists():
                 messages.info(request , 'Username is already taken please choose another one')
                 return redirect('register')
@@ -53,11 +53,15 @@ def register(request):
                 f.close()
                 user.save()
                 return redirect('login')    
-        if (len(password1)>3):
-            messages.info(request,'Enter password with more than 3 characters')
-        
+        if (len(password1)<8):
+            messages.info(request,'Password must contain atleast 8 characters')
         else:
             messages.info(request , 'Both the passwords did not match please try again')
             return redirect('register')
     else:
         return render(request, 'register.html' )
+
+
+def signup_redirect(request):
+    messages.error(request,"Something went wrong here, It maybe that you already have account!")
+    return redirect('login')

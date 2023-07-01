@@ -11,7 +11,7 @@ form {
 }
 
 div.register{
-    height: 480px;
+    height: 520px;
 	width: 320px;
     background: rgba(0, 0, 0, 0.5);
     color: white;
@@ -50,6 +50,7 @@ div.register{
 	border-radius: 20px;
 }
 
+/*for the hovering animations*/
 .register input[type="text"]:hover , input[type="password"]:hover, input[type='email']:hover {
 	cursor: pointer;
 	background: #fff;

@@ -5,5 +5,6 @@ urlpatterns = [
     path('register', views.register , name= 'register'),
     path('login', views.login, name= 'login'),
     path('logout', views.logout),
+    path('social/signup/', views.signup_redirect, name='signup_redirect'),
 ]
 

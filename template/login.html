@@ -1,4 +1,6 @@
 {%load static%}
+{% load socialaccount %}
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,6 +26,13 @@
             <p>Password</p>
             <input type="password" name="password" placeholder="Enter your password">
             <input type="submit" name="submit">
+            <button class="btn btn-outline-info">
+                <a href="{% provider_login_url 'google' %}?next=/">
+                    
+                        Login with Google
+                
+                </a>
+            </button>
         </form>
         <br>
         <p><span>Need an account? </span><a href="/accounts/register" class="anchor"> Register Here</a> </p>
