@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import User,auth
 from django.contrib import messages
+import os
 # Create your views here.
 
 # logging out
@@ -45,7 +46,11 @@ def register(request):
             else:
                 user = User.objects.create_user(username=username,email=email,password = password2)
                 a=str(username)+'.txt'
-                filepath = f"C:\\Users\\SriHarsha\\Desktop\\Castlin\\Users data\\{a}"
+                current_directory = os.path.dirname(os.path.abspath(__file__))
+                user_data_directory = os.path.join(current_directory, "Users data")
+                os.makedirs(user_data_directory, exist_ok=True)
+                filepath = os.path.join(user_data_directory, a)
+                # filepath = f"C:\\Users\\SriHarsha\\Desktop\\Castlin\\Users data\\{a}"
                 f = open(filepath, 'w')
                 f.write('Username : '+ username +'\n')
                 f.write('Email ID : '+ email + '\n') 
