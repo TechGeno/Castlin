@@ -24,7 +24,7 @@ SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =config("DEBUG",cast=bool)
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost','127.0.0.1','castlin.azurewebsites.net']
 
 
 # Application definition
@@ -50,6 +50,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware',    
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -162,6 +163,7 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR,"static")
 ]
 STATIC_ROOT = os.path.join(BASE_DIR,'assets')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'media')
