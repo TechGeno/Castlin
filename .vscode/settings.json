@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/7ff37bfb-9311-45ee-8198-d4b1287e9f71/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/Castlin",
+    "appService.deploySubpath": "."
+}
