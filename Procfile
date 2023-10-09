@@ -1,1 +1,1 @@
-web: gunicorn 'shino.wsgi' -b :8000
+web: python manage.py migrate && gunicorn shino.wsgi
