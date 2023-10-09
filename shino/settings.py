@@ -85,14 +85,20 @@ WSGI_APPLICATION = 'shino.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-DATABASES = {
+"""DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': config("dbname"),
         'HOST': config("dbhost"),
         'PORT': config("dbport"),
         'USER': config("dbuser"),
         'PASSWORD': config("dbpass"),
+    }
+}"""
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': f"{BASE_DIR}/db.sqlite3",
     }
 }
 
