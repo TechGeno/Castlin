@@ -1,1 +1,1 @@
-web: gunicorn 'shino.wsgi'
+web: gunicorn 'shino.wsgi' -b :8000
