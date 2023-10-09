@@ -1,1 +1,1 @@
-web: python manage.py migrate && gunicorn shino.wsgi
+web: python manage.py migrate && gunicorn shino.wsgi -b :$PORT
