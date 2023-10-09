@@ -24,7 +24,7 @@ SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =config("DEBUG",cast=bool)
-CSRF_TRUSTED_ORIGINS = [‘https://castlin-production-8037.up.railway.app’]
+CSRF_TRUSTED_ORIGINS = ['*']
 ALLOWED_HOSTS = ['*']
 
 
