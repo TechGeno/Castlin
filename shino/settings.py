@@ -24,8 +24,12 @@ SECRET_KEY = config("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =config("DEBUG",cast=bool)
-if not DEBUG:
-CSRF_TRUSTED_ORIGINS = [‘https://castlin-production-8037.up.railway.app’]
+PORT = os.environ.get('PORT', '8000')
+CSRF_TRUSTED_ORIGINS = [
+    f'https://castlin-production.up.railway.app/',
+    f'https://castlin-production-f{PORT}.up.railway.app/'
+]
+# CSRF_TRUSTED_ORIGINS = [‘https://castlin-production-8037.up.railway.app’]
 ALLOWED_HOSTS = ['*']
 
 
