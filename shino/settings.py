@@ -64,8 +64,8 @@ MIDDLEWARE = [
     
 ]
 CSRF_TRUSTED_ORIGINS = [
-    f'https://castlin-production-f{PORT}.up.railway.app/',
-    f'https://castlin-production.up.railway.app/',
+    f'https://castlin-production-f{PORT}.up.railway.app',
+    f'https://castlin-production.up.railway.app',
     'https://castlin-production.up.railway.app'
 ]
 
@@ -95,12 +95,12 @@ WSGI_APPLICATION = 'shino.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': config("dbname"),
+        'PASSWORD': config("dbpass"),
+        'USER': config("dbuser"),
         'HOST': config("dbhost"),
         'PORT': config("dbport"),
-        'USER': config("dbuser"),
-        'PASSWORD': config("dbpass"),
     }
 }
 
