@@ -25,10 +25,7 @@ SECRET_KEY = config("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG =config("DEBUG",cast=bool)
 PORT = os.environ.get('PORT', '8000')
-# CSRF_TRUSTED_ORIGINS = [
-#     f'https://castlin-production-f{PORT}.up.railway.app/',
-#     f'https://castlin-production.up.railway.app/'
-# ]
+
 # CSRF_TRUSTED_ORIGINS = [‘https://castlin-production-8037.up.railway.app’]
 ALLOWED_HOSTS = ['*']
 
@@ -65,6 +62,11 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     
+]
+CSRF_TRUSTED_ORIGINS = [
+    f'https://castlin-production-f{PORT}.up.railway.app/',
+    f'https://castlin-production.up.railway.app/',
+    'https://castlin-production.up.railway.app'
 ]
 
 ROOT_URLCONF = 'shino.urls'
