@@ -1,3 +1,0 @@
-Username : Test123
-Email ID : test@gmail.com
-Password : asdfghjkl 
